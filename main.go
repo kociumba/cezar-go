@@ -1,7 +1,10 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
+	"strings"
 )
 
 func main() {
@@ -25,9 +28,11 @@ func universal(operator string) {
 	shift := 0
 	shifted := 0
 
-	fmt.Println("text: ")
+	reader := bufio.NewReader(os.Stdin)
 
-	fmt.Scanln(&text)
+	fmt.Println("text: ")
+	text, _ = reader.ReadString('\n')
+	text = strings.TrimSpace(text)
 
 	fmt.Println("shift: ")
 
